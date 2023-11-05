@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лаба 6</title>
+  </head>
+  <body>
+    <input id="i1" type="number" style="width: 200px;" placeholder="Enter count"><br><br>
+    <button onclick="run()">Show</button><br><br>
+    <div id="result"></div>
+    <script>
+        function run() {
+          let count = document.getElementById('i1').value;
+          
+          createHeaders(count);
+        }
+
+        function createHeaders(count) {
+          let headersHtml = ""
+          for (let i = 0; i < count; i++) {
+            headersHtml += `<h2>Header${i+1}</h2>`;
+          }
+
+          document.getElementById('result').innerHTML = headersHtml;
+        }
+  
+    </script>
+  </body>
+</html>

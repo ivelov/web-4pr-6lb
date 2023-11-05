@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лаба 6</title>
+  </head>
+  <body>
+    <textarea id="i1" cols="30" rows="10"></textarea><br><br>
+    <button onclick="run()">Show</button><br><br>
+    <div id="result"></div>
+    <script>
+        function run() {
+          let rows = document.getElementById('i1').value.split('\n');
+          
+          show(rows);
+        }
+
+        function show(rows) {
+          let tableHtml = "<table>";
+          for (let i = 0; i < rows.length; i++) {
+            tableHtml += "<tr>";
+
+            let words = rows[i].split(' ');
+            for (let j = 0; j < words.length; j++) {
+              tableHtml += `<td>${words[j]}</td>`;
+            }
+
+            tableHtml += "</tr>";
+          }
+          tableHtml += "</table>";
+
+          document.getElementById('result').innerHTML = tableHtml;
+        }
+  
+    </script>
+    <style>
+      td{
+        border: 1px solid black;
+      }
+    </style>
+  </body>
+</html>
